@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -24,6 +24,18 @@ function App() {
       }))
     );
   };
+
+  const [test, setTest] = useState("");
+  const [test2, setTest2] = useState("");
+
+  useEffect(() => {
+    setTimeout(() => {
+      setTest("1");
+      setTest("2");
+    }, 1000);
+  }, []);
+
+  console.log("render 몇 번?");
 
   return (
     <div
